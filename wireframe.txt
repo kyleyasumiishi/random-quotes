@@ -1,19 +1,29 @@
 Implementation Notes/Ideas/Steps:
 
-0. Write a hello world test - Done
-1. Create a QuoteBox Component
-2. Start tests for App Component
+when the new-quote button is clicked, my quote machine should fetch a new quote and display it in the text element
 
-// This will be a child Component
-// Does this component need to know state or can it be a function component and receive props from parent. I think latter.
+state in App
+-current quote
+-previous quotes
 
-// Hierarchy of components
-App 
-QuoteBox, Back, Forward (same component for forward arrow and button)
-Social Media
+function in App - get new quote
+will be called when component loads and whenever button or forward arrow is clicked
 
-// List of quote objects
-// Each object will contain text, author, color info, etc.
+add current quote to state
 
 
-how to test props
+
+
+
+
+
+
+
+
+
+
+
+Do stuff with later:
+
+passionately curious
+eslint

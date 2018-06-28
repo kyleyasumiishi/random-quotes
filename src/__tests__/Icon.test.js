@@ -1,45 +1,47 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { render, cleanup } from "react-testing-library";
-import { fireEvent } from "dom-testing-library";
-import "dom-testing-library/extend-expect";
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import Icon from "../Icon";
+
+configure({ adapter: new Adapter() });
 
 // forward, backwared, twitter, facebook
 
 // takes as props an icon name (which it renders), an id, and an onclick function 
 
-// Automatically unmount and cleanup DOM after the test is finished.
-afterEach(cleanup);
-
 describe("Icon Component", () => {
-    it("renders a <div> element with a className of 'icon'", () => {
-        const { container } = render(<Icon />);
-        const icon = container.querySelector(".icon");
-        expect(icon).toBeInstanceOf(HTMLDivElement);
-        expect(icon).toHaveClass('icon');
-    });
-    it("has an onClick method", () => {
-        const onClick = jest.fn();
-        const { container } = render(<Icon onClick={onClick} />);
-        const icon = container.querySelector(".icon");
-        icon.click()
-        expect(onClick).toHaveBeenCalledTimes(1);
-    });
-    it("has an id attribute equal to props.id", () => {
-        const { container } = render(<Icon icon="twitter" id="tweet-quote" />);
-        const icon = container.querySelector(".icon");
-        expect(icon).toHaveAttribute('id', 'tweet-quote');
-    });
-    it("does not have an id attribute if props.id does not exist", () => {
-        const { container } = render(<Icon icon="facebook" />);
-        const icon = container.querySelector(".icon");
-        expect(icon).not.toHaveAttribute('id');
-    });
-    it("contains a child Component", () => {
-        const { container } = render(<Icon icon="twitter" />);
-        const icon = container.querySelector(".icon");
-        expect(icon.childElementCount) === 1;
-    });
-    // idid attribute equal to its props.id
+  it("renders a <div> element with a className of 'icon'", () => {
+    const wrapper = shallow(<Icon />);
+    const icon = wrapper.find('div');
+    expect(icon.exists()).toBeTruthy();
+    expect(icon.props().className).toEqual('icon');
+  });
+  it("has an onClick method", () => {
+    const fakeFunction = jest.fn();
+    const wrapper = shallow(<Icon onClick={fakeFunction} />);
+    const icon = wrapper.find('div');
+    icon.simulate('click');
+    expect(fakeFunction).toHaveBeenCalledTimes(1);
+  });
+  it("has an id attribute equal to props.id", () => {
+    const wrapper = shallow(<Icon id="tweet-quote"/>);
+    const icon = wrapper.find('div');
+    expect(icon.props().id).toEqual("tweet-quote");
+  });
+  it("does not have an id attribute if props.id is undefined", () => {
+    const wrapper = shallow(<Icon />);
+    const icon = wrapper.find('div');
+    expect(!icon.props().id).toBeTruthy();
+  });
+  it("contains a child component if props.icon is defined", () => {
+    const wrapper = shallow(<Icon icon="twitter" />);
+    const icon = wrapper.find('div');
+    expect(icon.children().length).toEqual(1);
+  });
+  it("does not contain a child component if props.icon is undefined", () => {
+    const wrapper = shallow(<Icon />);
+    const icon = wrapper.find('div');
+    expect(icon.children().length).toEqual(0);
+  });
 });
