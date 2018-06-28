@@ -19,7 +19,7 @@ const Icon = (props) => {
     }
     
     return (
-        <div className="icon" onClick={props.onClick}>
+        <div id={props.id} className="icon" onClick={props.onClick}>
             {faIcon()}
             
             {/* 

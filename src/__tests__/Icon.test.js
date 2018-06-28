@@ -26,6 +26,16 @@ describe("Icon Component", () => {
         icon.click()
         expect(onClick).toHaveBeenCalledTimes(1);
     });
+    it("has an id attribute equal to props.id", () => {
+        const { container } = render(<Icon icon="twitter" id="tweet-quote" />);
+        const icon = container.querySelector(".icon");
+        expect(icon).toHaveAttribute('id', 'tweet-quote');
+    });
+    it("does not have an id attribute if props.id does not exist", () => {
+        const { container } = render(<Icon icon="facebook" />);
+        const icon = container.querySelector(".icon");
+        expect(icon).not.toHaveAttribute('id');
+    });
     it("contains a child Component", () => {
         const { container } = render(<Icon icon="twitter" />);
         const icon = container.querySelector(".icon");

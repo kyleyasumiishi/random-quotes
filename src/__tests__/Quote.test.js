@@ -9,7 +9,7 @@ afterEach(cleanup);
 
 describe("Quote Component", () => {
     it("contains a child <div> element with a corresponding id attribute of 'text'", () => {
-        const { container } = render(<Quote />);
+        const { container } = render(<Quote id="text" />);
         const text = container.querySelector("#text");
         expect(text).toBeInstanceOf(HTMLDivElement);
         expect(text).toHaveAttribute('id', 'text');

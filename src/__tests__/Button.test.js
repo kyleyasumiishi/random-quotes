@@ -9,7 +9,7 @@ afterEach(cleanup);
 
 describe("Button Component", () => {
     it("renders a <button> element with a corresponding id attribute of 'new-quote'", () => {
-        const { container } = render(<Button />);
+        const { container } = render(<Button id="new-quote" />);
         const button = container.querySelector("#new-quote");
         expect(button).toBeInstanceOf(HTMLButtonElement);
         expect(button).toHaveAttribute('id', 'new-quote');
