@@ -1,0 +1,19 @@
+Implementation Notes/Ideas/Steps:
+
+0. Write a hello world test - Done
+1. Create a QuoteBox Component
+2. Start tests for App Component
+
+// This will be a child Component
+// Does this component need to know state or can it be a function component and receive props from parent. I think latter.
+
+// Hierarchy of components
+App 
+QuoteBox, Back, Forward (same component for forward arrow and button)
+Social Media
+
+// List of quote objects
+// Each object will contain text, author, color info, etc.
+
+
+how to test props
