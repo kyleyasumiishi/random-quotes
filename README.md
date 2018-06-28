@@ -23,7 +23,7 @@ Follow these instructions to get a development environment up and running.
 Clone the repository 
 
 ```
-git clone
+git clone https://github.com/kyleyasumiishi/random-quotes.git
 ```
 
 Install yarn
