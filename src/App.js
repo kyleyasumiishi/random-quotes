@@ -12,9 +12,14 @@ class App extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        currentQuote: listOfQuotes[0]  // null
+        previousQuotes: [],
+        backtrackCount: 0,
+        currentQuote: listOfQuotes[0],  // null
+        newestRandom: null
       };
       this.newQuote = this.newQuote.bind(this);
+      this.prevQuote = this.prevQuote.bind(this);
+      this.nextQuote = this.nextQuote.bind(this);
   }
 
   newQuote() {
@@ -27,8 +32,42 @@ class App extends Component {
       }
     }
     this.setState({
-      currentQuote: quote
+      previousQuotes: this.state.previousQuotes.concat([this.state.currentQuote]),
+      currentQuote: quote,
+      backtrackCount: 0
     });
+  }
+
+  prevQuote() {
+    if (this.state.previousQuotes.length > 0) {
+      if (this.state.backtrackCount === 0) {
+        this.setState({
+          newestRandom: this.state.currentQuote
+        });
+      }
+      let newBacktrackCount = this.state.backtrackCount + 1;
+      this.setState({
+        backtrackCount: newBacktrackCount,
+        currentQuote: this.state.previousQuotes[this.state.previousQuotes.length - newBacktrackCount],
+      });
+    }
+  }
+
+  nextQuote() {
+    let newBacktrackCount = this.state.backtrackCount - 1;
+    if (this.state.backtrackCount === 0) {
+      this.newQuote();
+    } else if (this.state.backtrackCount === 1) {
+      this.setState({
+         backtrackCount: newBacktrackCount,
+         currentQuote: this.state.newestRandom
+      });
+    } else {
+      this.setState({
+        backtrackCount: newBacktrackCount,
+        currentQuote: this.state.previousQuotes[this.state.previousQuotes.length - newBacktrackCount]
+      });
+    }
   }
 
   render() {

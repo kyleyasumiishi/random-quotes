@@ -10,9 +10,7 @@ let arrOfObjects = [
 
 console.log(arrOfObjects.indexOf(4));
 
-for (let i = 0; i < arrOfObjects.length; i++) {
-  let object = arrOfOjects
-}
+console.log(arrOfObjects.concat([1]));
 
 
 // randomly choose number between 0 and length - 1

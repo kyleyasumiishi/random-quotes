@@ -1,7 +1,8 @@
 Implementation Notes/Ideas/Steps:
 
 keep track of previous quotes in state and add function to go back
-update newQuote to add previous quote to state
+when go forward, go until most recent quote
+update newQuote to add previous quote to state - DONE
 randomly choose a new quote when components load, not just my quote every time
 add twitter and facebook functionality
 add hyperlink to each author to wikipedia page
@@ -13,3 +14,14 @@ Do stuff with later:
 
 passionately curious
 eslint
+lifecycle
+
+
+
+
+previous state
+-when newquote is added, the existing quote goes into an array maybe?
+-when back button is clicked
+  I don't think the previous array should be modified. I think if you go back, there should be a separate state property like numPrevious that keeps track of how far you went back. So if you go back 1, it's length - 1
+-when forward button is clicked
+  First checks if numPrevious is greater than 0. If it is then it decreases numPrevious and displays the object at that reverse position in the previous array. If numPrevious is 0, it calls newQuote
