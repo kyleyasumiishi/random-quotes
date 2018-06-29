@@ -1,6 +1,6 @@
 # Random Quotes
 
-<center>"I love quotes!" -Kyle Yasumiishi</center>
+<p align="center">"I love quotes!" -Kyle Yasumiishi</p>
 
 This <a href="">simple React quote application</a> randomly displays one of my favorite quotes.
 
@@ -60,7 +60,7 @@ One of my primary goals for each freeCodeCamp project and set of challenges is t
 Here are a few <em>new concepts</em> I learned and practiced by creating this React app:
 
 * Test-Driven Development
-* Unit testing with Jest and react-testing-library
+* Unit testing in React with Jest, Enzyme, and react-testing-library
 * Wireframing
 * Mobile-first design
 * Readme-Driven Development
@@ -69,6 +69,7 @@ Here are a few <em>new concepts</em> I learned and practiced by creating this Re
 * JavaScript <code>import</code> statement
 * React components and props
 * Separation of concerns as a basic design principle for separating my software's logic into different sections
+* Understanding the reason for binding <code>this</code> in the constructor to class methods
 
 
 ## Technologies Used
@@ -81,6 +82,8 @@ Here are a few <em>new concepts</em> I learned and practiced by creating this Re
 * yarn
 * HTML
 * CSS
+* Jest
+* Enzyme
 
 ## Authors
 
