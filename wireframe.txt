@@ -1,27 +1,13 @@
 Implementation Notes/Ideas/Steps:
 
-when the new-quote button is clicked, my quote machine should fetch a new quote and display it in the text element
-
-state in App
--current quote
--previous quotes
-
-function in App - get new quote
-will be called when component loads and whenever button or forward arrow is clicked
-
-add current quote to state
-
-
-
-
-
-
-
-
-
-
-
-
+keep track of previous quotes in state and add function to go back
+update newQuote to add previous quote to state
+randomly choose a new quote when components load, not just my quote every time
+add twitter and facebook functionality
+add hyperlink to each author to wikipedia page
+start designing (also need to add quotation marks around quote and hyphen before author's name)
+clean up folders
+comment code - maybe explore linter
 
 Do stuff with later:
 

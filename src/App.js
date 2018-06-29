@@ -21,10 +21,8 @@ class App extends Component {
     let isSameQuote = true;
     let quote;
     while (isSameQuote) {
-      let randomIdx = Math.floor(Math.random() * numQuotes);
-      quote = listOfQuotes[randomIdx];
-      let text = quote.text;
-      if (text !== this.state.currentQuote.text) {
+      quote = listOfQuotes[Math.floor(Math.random() * numQuotes)];
+      if (quote.text !== this.state.currentQuote.text) {
         isSameQuote = false;
       }
     }
@@ -46,7 +44,7 @@ class App extends Component {
         <Icon icon="twitter" id="tweet-quote" />
         <Icon icon="facebook" />
         <Icon icon="left" />
-        <Icon icon="right" />
+        <Icon icon="right" onClick={this.newQuote} />
       </div>
     );
   }
