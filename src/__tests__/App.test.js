@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import App from '../App';
+import quotes from "../quotes";
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
+const listOfQuotes = quotes['quotes'];
+const numQuotes = listOfQuotes.length;
 
 configure({ adapter: new Adapter() });
 
@@ -15,8 +19,14 @@ describe("App Component", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('div').props().id).toEqual('quote-box');
   });
-  // it("contains a newQuote method that is called when the button is clicked", () => {
-  //   const wrapper = shallow(<App />);
-  //   console.log(wrapper.instance());
-  // });
+  describe("newQuote method", () => {
+    it("changes the state's current quote object to a different quote", () => {
+      const wrapper = shallow(<App />);
+      const newQuote = wrapper.instance().newQuote;
+      const oldQuoteId = wrapper.instance().state.currentQuote.id;
+      newQuote();
+      const newQuoteId = wrapper.instance().state.currentQuote.id;
+      expect(oldQuoteId !== newQuoteId).toBeTruthy();
+    });
+  })
 })

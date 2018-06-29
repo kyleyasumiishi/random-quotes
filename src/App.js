@@ -14,6 +14,23 @@ class App extends Component {
       this.state = {
         currentQuote: listOfQuotes[0]  // null
       };
+      this.newQuote = this.newQuote.bind(this);
+  }
+
+  newQuote() {
+    let isSameQuote = true;
+    let quote;
+    while (isSameQuote) {
+      let randomIdx = Math.floor(Math.random() * numQuotes);
+      quote = listOfQuotes[randomIdx];
+      let text = quote.text;
+      if (text !== this.state.currentQuote.text) {
+        isSameQuote = false;
+      }
+    }
+    this.setState({
+      currentQuote: quote
+    });
   }
 
   render() {
@@ -25,7 +42,7 @@ class App extends Component {
       <div id="quote-box" data-testid="quote-box">
         <Quote text={text} author={author} />
         This quote is {length} characters long!
-        <Button id="new-quote" />
+        <Button id="new-quote" onClick={this.newQuote} />
         <Icon icon="twitter" id="tweet-quote" />
         <Icon icon="facebook" />
         <Icon icon="left" />
