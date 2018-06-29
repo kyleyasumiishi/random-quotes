@@ -90,16 +90,20 @@ class App extends Component {
         <div id="mobile">
           <nav className="mobile-nav">
             <Icon icon="left" onClick={this.prevQuote} />
-            <Icon icon="twitter" id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
+            <Icon icon="twitter" className="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
             <Icon icon="right" onClick={this.nextQuote} />
           </nav>
           <section className="quote-mobile">
-          <Quote id="quote" text={text} author={author} />
+          <Quote className="quote" text={text} author={author} />
           </section>
           <footer className="button-mobile">
-          <Button id="new-quote" onClick={this.newQuote} />
+          <Button className="new-quote" onClick={this.newQuote} />
           </footer>
         </div>
+
+        {/* pull out section so you don't have two quotes */}
+        {/* make sure all quotes are either single or doulbe thorughout */}
+
 
         {/* <div id="desktop">
 

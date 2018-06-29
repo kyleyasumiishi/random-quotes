@@ -2,9 +2,9 @@ import React from "react";
 
 const Quote = (props) => {
     return (
-        <div id={props.id}>
-            <div id="text">{props.text}</div>
-            <div id="author">― {props.author}</div>
+        <div className={props.className}>
+            <div className="text">{props.text}</div>
+            <div className="author">― {props.author}</div>
         </div>
     );
 }

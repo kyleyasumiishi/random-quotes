@@ -12,28 +12,28 @@ afterEach(cleanup);
 configure({ adapter: new Adapter() });
 
 describe("Quote Component", () => {
-  it("contains a child <div> element with a corresponding id attribute of 'text'", () => {
+  it("contains a child <div> element with a corresponding className attribute of 'text'", () => {
     const wrapper = shallow(<Quote />);
-    const child = wrapper.props().children.filter(child => child.props.id === 'text')[0];
+    const child = wrapper.props().children.filter(child => child.props.className === 'text')[0];
     expect(!!child).toBeTruthy();
     expect(child.type).toEqual('div');
-    expect(child.props.id).toEqual('text'); 
+    expect(child.props.className).toEqual('text'); 
   });
-  it("contains a child <div> element with a corresponding id attribute of 'author'", () => {
+  it("contains a child <div> element with a corresponding className attribute of 'author'", () => {
     const wrapper = shallow(<Quote />);
-    const child = wrapper.props().children.filter(child => child.props.id === 'author')[0];
+    const child = wrapper.props().children.filter(child => child.props.className === 'author')[0];
     expect(!!child).toBeTruthy();
     expect(child.type).toEqual('div');
-    expect(child.props.id).toEqual('author'); 
+    expect(child.props.className).toEqual('author'); 
   });
   it("displays props.text within the text div", () => {
       const { container } = render(<Quote text="I love quotes" />);
-      const text = container.querySelector("#text");
+      const text = container.querySelector(".text");
       expect(text).toHaveTextContent("I love quotes");
   });
   it("displays props.author within the author div", () => {
       const { container } = render(<Quote author="Kyle Yasumiishi" />);
-      const author = container.querySelector("#author");
+      const author = container.querySelector(".author");
       expect(author).toHaveTextContent("Kyle Yasumiishi");
   });
 });

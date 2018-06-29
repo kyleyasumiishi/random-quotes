@@ -15,7 +15,7 @@ svg {
   width: 4rem;
 }
 
-.button-mobile #new-quote {
+.button-mobile .new-quote {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -25,17 +25,17 @@ svg {
   background: #3498db;
 }
 
-.quote-mobile #quote {
+.quote-mobile .quote {
   margin: 7%;
   padding: 1rem;
 }
 
-.quote-mobile #text {
+.quote-mobile .text {
   font-size: 2rem;
   margin-bottom: 20%;
 }
 
-.quote-mobile #author {
+.quote-mobile .author {
   font-size: 1.5rem;
   margin-top: 20%;
   text-align: right;

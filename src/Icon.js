@@ -24,7 +24,7 @@ const Icon = (props) => {
     }
 
     return (
-        <a id={props.id} className="icon" onClick={props.onClick} href={href()} target={props.target}>
+        <a className={props.className} onClick={props.onClick} href={href()} target={props.target}>
             {faIcon()}
         </a>
     );
