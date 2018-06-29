@@ -39,17 +39,19 @@ class App extends Component {
   }
 
   prevQuote() {
-    if (this.state.previousQuotes.length > 0) {
-      if (this.state.backtrackCount === 0) {
+    if (this.state.backtrackCount < this.state.previousQuotes.length) {
+      if (this.state.previousQuotes.length > 0) {
+        if (this.state.backtrackCount === 0) {
+          this.setState({
+            newestRandom: this.state.currentQuote
+          });
+        }
+        let newBacktrackCount = this.state.backtrackCount + 1;
         this.setState({
-          newestRandom: this.state.currentQuote
+          backtrackCount: newBacktrackCount,
+          currentQuote: this.state.previousQuotes[this.state.previousQuotes.length - newBacktrackCount],
         });
       }
-      let newBacktrackCount = this.state.backtrackCount + 1;
-      this.setState({
-        backtrackCount: newBacktrackCount,
-        currentQuote: this.state.previousQuotes[this.state.previousQuotes.length - newBacktrackCount],
-      });
     }
   }
 
@@ -82,8 +84,8 @@ class App extends Component {
         <Button id="new-quote" onClick={this.newQuote} />
         <Icon icon="twitter" id="tweet-quote" />
         <Icon icon="facebook" />
-        <Icon icon="left" />
-        <Icon icon="right" onClick={this.newQuote} />
+        <Icon icon="left" onClick={this.prevQuote} />
+        <Icon icon="right" onClick={this.nextQuote} />
       </div>
     );
   }

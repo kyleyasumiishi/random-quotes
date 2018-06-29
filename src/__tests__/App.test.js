@@ -57,6 +57,20 @@ describe("App Component", () => {
   });
 
   describe("prevQuote method", () => {
+    it("does not do anthing if 'backtrackCount' >= length of 'previousQuotes'", () => {
+      const wrapper = shallow(<App />);
+      // Methods
+      const newQuote = wrapper.instance().newQuote;
+      const prevQuote = wrapper.instance().prevQuote;
+      // Test Logic
+      newQuote();
+      prevQuote();
+      const targetQuote = wrapper.instance().state.currentQuote;
+      prevQuote();
+      expect(wrapper.instance().state.currentQuote.id === targetQuote.id).toBeTruthy();
+      prevQuote();
+      expect(wrapper.instance().state.currentQuote.id === targetQuote.id).toBeTruthy();
+    });
     it("Appends 'currentQuote' object to 'previousQuotes' array if 'backtrackCount' is 0", () => {
       const wrapper = shallow(<App />);
       // Methods

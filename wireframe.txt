@@ -1,8 +1,11 @@
 Implementation Notes/Ideas/Steps:
 
-keep track of previous quotes in state and add function to go back
-when go forward, go until most recent quote
+keep track of previous quotes in state and add function to go back - DONE
+when go forward, go until most recent quote - DONE
 update newQuote to add previous quote to state - DONE
+
+
+
 randomly choose a new quote when components load, not just my quote every time
 add twitter and facebook functionality
 add hyperlink to each author to wikipedia page
