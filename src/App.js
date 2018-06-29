@@ -14,12 +14,18 @@ class App extends Component {
       this.state = {
         previousQuotes: [],
         backtrackCount: 0,
-        currentQuote: listOfQuotes[0],  // null
+        currentQuote: null,
         newestRandom: null
       };
       this.newQuote = this.newQuote.bind(this);
       this.prevQuote = this.prevQuote.bind(this);
       this.nextQuote = this.nextQuote.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({
+      currentQuote: listOfQuotes[Math.floor(Math.random() * numQuotes)]
+    });
   }
 
   newQuote() {

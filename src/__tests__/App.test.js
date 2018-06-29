@@ -12,6 +12,10 @@ const numQuotes = listOfQuotes.length;
 configure({ adapter: new Adapter() });
 
 describe("App Component", () => {
+  it("sets 'currentQuote' to a random quote when it mounts", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.instance().state.currentQuote !== null).toBeTruthy();
+  });
   it("renders a <div> element", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.type()).toEqual('div');
@@ -108,10 +112,10 @@ describe("App Component", () => {
     it("does not update 'currentQuote' if 'previousQuotes' is empty array", () => {
       const wrapper = shallow(<App />);
       // Methods
-      const currentQuote = wrapper.instance().state.currentQuote;
       const prevQuote = wrapper.instance().prevQuote;
       // Test Logic
       wrapper.setState({currentQuote: listOfQuotes[0]});
+      const currentQuote = wrapper.instance().state.currentQuote;
       prevQuote();
       expect(wrapper.instance().state.currentQuote.id === currentQuote.id).toBeTruthy();
     });

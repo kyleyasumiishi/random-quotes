@@ -7,6 +7,11 @@ update newQuote to add previous quote to state - DONE
 
 
 randomly choose a new quote when components load, not just my quote every time
+-componentwillmount - choose a random quote
+
+
+
+
 add twitter and facebook functionality
 add hyperlink to each author to wikipedia page
 start designing (also need to add quotation marks around quote and hyphen before author's name)
