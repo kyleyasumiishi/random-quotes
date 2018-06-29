@@ -23,9 +23,11 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.setState({
-      currentQuote: listOfQuotes[Math.floor(Math.random() * numQuotes)]
-    });
+    if (!this.state.currentQuote) {
+      this.setState({
+        currentQuote: listOfQuotes[Math.floor(Math.random() * numQuotes)]
+      });
+    }
   }
 
   newQuote() {
@@ -88,8 +90,8 @@ class App extends Component {
         <Quote text={text} author={author} />
         This quote is {length} characters long!
         <Button id="new-quote" onClick={this.newQuote} />
-        <Icon icon="twitter" id="tweet-quote" />
-        <Icon icon="facebook" />
+        {/* add divs around icons */}
+        <Icon icon="twitter" id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
         <Icon icon="left" onClick={this.prevQuote} />
         <Icon icon="right" onClick={this.nextQuote} />
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import FaLeft from "react-icons/lib/fa/angle-left";
 import FaRight from "react-icons/lib/fa/angle-right";
 import FaTwitter from "react-icons/lib/fa/twitter";
-import FaFacebook from "react-icons/lib/fa/facebook";
 
 const Icon = (props) => {
     const faIcon = () => {
@@ -13,20 +12,21 @@ const Icon = (props) => {
                 return <FaRight />;
             case "twitter":
                 return <FaTwitter />;
-            case "facebook":
-                return <FaFacebook />;
         }
     }
     
+    const href = () => {
+      switch(props.icon) {
+        case "twitter":
+          let query = "?text=" + encodeURI(props.text + " -" + props.author); 
+          return props.href + query;
+      }
+    }
+
     return (
-        <div id={props.id} className="icon" onClick={props.onClick}>
+        <a id={props.id} className="icon" onClick={props.onClick} href={href()} target={props.target}>
             {faIcon()}
-            
-            {/* 
-            icon name - component
-            div should have onclick method
-            */}
-        </div>
+        </a>
     );
 }
 
