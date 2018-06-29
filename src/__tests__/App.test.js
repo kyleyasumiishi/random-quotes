@@ -22,7 +22,7 @@ describe("App Component", () => {
   });
   it("has an id attribute of 'quote-box'", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('div').props().id).toEqual('quote-box');
+    expect(wrapper.getElements()[0].props.id).toEqual('quote-box');
   });
 
   describe("newQuote method", () => {

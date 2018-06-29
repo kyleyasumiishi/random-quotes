@@ -87,13 +87,24 @@ class App extends Component {
 
     return (
       <div id="quote-box" data-testid="quote-box">
-        <Quote text={text} author={author} />
-        This quote is {length} characters long!
-        <Button id="new-quote" onClick={this.newQuote} />
-        {/* add divs around icons */}
-        <Icon icon="twitter" id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
-        <Icon icon="left" onClick={this.prevQuote} />
-        <Icon icon="right" onClick={this.nextQuote} />
+        <div id="mobile">
+          <nav className="mobile-nav">
+            <Icon icon="left" onClick={this.prevQuote} />
+            <Icon icon="twitter" id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
+            <Icon icon="right" onClick={this.nextQuote} />
+          </nav>
+          <section className="quote-mobile">
+          <Quote id="quote" text={text} author={author} />
+          </section>
+          <footer className="button-mobile">
+          <Button id="new-quote" onClick={this.newQuote} />
+          </footer>
+        </div>
+
+        <div id="desktop"></div>
+
+
+
       </div>
     );
   }
