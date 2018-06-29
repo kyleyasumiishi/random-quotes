@@ -32,7 +32,7 @@ export default {
     },
     {
         id: 6,
-        text: "Well done is better than well said",
+        text: "Well done is better than well said.",
         author: "Benjamin Franklin",
     },
     {
