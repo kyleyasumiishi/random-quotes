@@ -101,7 +101,13 @@ class App extends Component {
           </footer>
         </div>
 
-        <div id="desktop"></div>
+        {/* <div id="desktop">
+
+
+          <footer className="button-desktop">
+            <Button id="new-quote" onClick={this.newQuote} />
+          </footer>        
+        </div> */}
 
 
 
