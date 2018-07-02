@@ -88,26 +88,19 @@ class App extends Component {
     return (
       <div id="quote-box" data-testid="quote-box">
        
-       
-       
-       
-        {/* <div id="mobile">
+        <div id="mobile">
           <nav className="mobile-nav">
             <Icon icon="left" onClick={this.prevQuote} />
             <Icon icon="twitter" className="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
             <Icon icon="right" onClick={this.nextQuote} />
           </nav>
-          <section className="quote-mobile">
-          <Quote className="quote" text={text} author={author} />
-          </section>
-          <footer className="button-mobile">
-          <Button className="new-quote" onClick={this.newQuote} />
-          </footer>
-        </div> */}
-
-        {/* pull out section so you don't have two quotes - but it's still same component with same state, so maybe not */}
-        {/* make sure all quotes are either single or doulbe thorughout */}
-
+          <div>
+            <Quote className="quote" text={text} author={author} />
+          </div>
+          <div>
+            <Button className="new-quote" onClick={this.newQuote} />
+          </div>
+        </div>
 
         <div id="desktop">
           <div class="leftCol">
@@ -118,16 +111,14 @@ class App extends Component {
               <Quote className="quote" text={text} author={author} />
               <Icon icon="twitter" className="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
             </div>
-            <footer className="button-desktop">
+            <div>
               <Button className="new-quote" onClick={this.newQuote} />
-            </footer>        
+            </div>        
           </div>
           <div class="rightCol">
             <Icon icon="right" onClick={this.nextQuote} />
           </div>
         </div>
-
-
 
       </div>
     );
