@@ -83,7 +83,6 @@ class App extends Component {
   render() {
     const text = this.state.currentQuote["text"];
     const author = this.state.currentQuote["author"];
-    const length = text.length;
 
     return (
       <div id="quote-box" data-testid="quote-box">
