@@ -427,5 +427,3 @@ export default {
     }
   ]
 }
-
-// export default quotes;

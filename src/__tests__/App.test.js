@@ -1,10 +1,8 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import App from '../App';
 import quotes from "../quotes";
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { wrap } from "module";
 
 const listOfQuotes = quotes['quotes'];
 const numQuotes = listOfQuotes.length;

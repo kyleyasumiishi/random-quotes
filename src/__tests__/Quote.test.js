@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { render, cleanup } from "react-testing-library";
@@ -37,5 +36,4 @@ describe("Quote Component", () => {
       expect(author).toHaveTextContent("Kyle Yasumiishi");
   });
 });
-// props
 

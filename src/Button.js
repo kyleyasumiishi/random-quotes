@@ -1,7 +1,5 @@
 import React from 'react';
 
-// add onclick method and handleclick method in props
-
 const Button = (props) => {
     return (
         <div>

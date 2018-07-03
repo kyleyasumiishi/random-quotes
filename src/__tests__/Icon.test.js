@@ -1,14 +1,9 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Icon from "../Icon";
 
 configure({ adapter: new Adapter() });
-
-// forward, backwared, twitter, facebook
-
-// takes as props an icon name (which it renders), an id, and an onclick function 
 
 describe("Icon Component", () => {
   it("renders an <anchor> element", () => {

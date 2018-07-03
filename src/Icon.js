@@ -16,10 +16,9 @@ const Icon = (props) => {
     }
     
     const href = () => {
-      switch(props.icon) {
-        case "twitter":
-          let query = "?text=" + encodeURIComponent(props.text + " -" + props.author); 
-          return props.href + query;
+      if (props.icon === "twitter") {
+        let query = "?text=" + encodeURIComponent(props.text + " -" + props.author);
+        return props.href + query;
       }
     }
 
