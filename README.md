@@ -72,6 +72,8 @@ Here are a few <em>new concepts</em> I learned and practiced by creating this Re
 * Understanding the reason for binding <code>this</code> in the constructor to class methods
 * CSS position property
 * Deploying React apps to GitHub pages
+* Creating favicons
+* Adding Lifecycle Methods to a React component to run code whenever components mount/unmount
 
 ## Technologies Used
 
