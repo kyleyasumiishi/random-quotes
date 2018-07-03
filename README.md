@@ -2,7 +2,7 @@
 
 <p align="center">"I love quotes!" -Kyle Yasumiishi</p>
 
-This <a href="">simple React quote application</a> randomly displays one of my favorite quotes.
+This <a href="https://kyleyasumiishi.github.io/random-quotes/">simple React quote application</a> randomly displays one of my favorite quotes.
 
 ## About
 
@@ -70,7 +70,8 @@ Here are a few <em>new concepts</em> I learned and practiced by creating this Re
 * React components and props
 * Separation of concerns as a basic design principle for separating my software's logic into different sections
 * Understanding the reason for binding <code>this</code> in the constructor to class methods
-
+* CSS position property
+* Deploying React apps to GitHub pages
 
 ## Technologies Used
 
