@@ -88,17 +88,15 @@ class App extends Component {
       <div id="quote-box" data-testid="quote-box">
        
         <div id="mobile">
+          <div className="container">
           <nav className="mobile-nav">
             <Icon icon="left" onClick={this.prevQuote} />
             <Icon icon="twitter" className="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank" text={text} author={author} />
             <Icon icon="right" onClick={this.nextQuote} />
           </nav>
-          <div>
             <Quote className="quote" text={text} author={author} />
           </div>
-          <div>
             <Button className="new-quote" onClick={this.newQuote} />
-          </div>
         </div>
 
         <div id="desktop">
