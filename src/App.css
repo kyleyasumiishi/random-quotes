@@ -91,12 +91,19 @@
   .leftCol {
     width: 25%;
     text-align: right;
-    margin-top: 37vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 7%;
   }
   
   .rightCol {
     width: 25%;
-    margin-top: 37vh;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 7%;
   }
   
   svg {
@@ -104,6 +111,14 @@
     height: 4rem;
     width: 4rem;
     color: white;
+  }
+
+  svg:hover {
+    padding: 0.5rem;
+    height: 5rem;
+    width: 5rem;
+    color: white;
+    cursor: pointer;
   }
   
   .tweet-quote svg {
